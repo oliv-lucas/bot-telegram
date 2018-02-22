@@ -1,7 +1,7 @@
 <?php
 
 require('chamadahtml.php');
-define('BOT_TOKEN', '344493477:AAHYFwXn0rdzPrAS-M0Tpm4AZOEKDnIPpn8');
+define('BOT_TOKEN', 344493477:AAHYFwXn0rdzPrAS-M0Tpm4AZOEKDnIPpn8);
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
 function processMessage($message) {
@@ -15,7 +15,7 @@ function processMessage($message) {
 		//envia a mensagem ao usuário
       sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => 'Olá, '. $message['from']['first_name'].
 		'! Escolha a a escalada desejada por ambiente, 'reply_markup' => array(
-        'keyboard' => array(array('Produção', 'Pré-Produção'),array('Total','Lotomania')),
+        'keyboard' => array(array('Produção', 'Pré-Produção'),array('Total','Lotofacil')),
         'one_time_keyboard' => true)));
     } else if ($text === "Produção") {
       sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getResult('megasena', $text)));
