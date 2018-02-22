@@ -47,13 +47,14 @@ $context  = stream_context_create( $options );
 file_get_contents(API_URL.$method, false, $context );
 }
 
-//obtém as atualizações do bot
-$update_response = file_get_contents(API_URL."getupdates");
-$response = json_decode($update_response, true);
-$length = count($response["result"]);
-//obtém a última atualização recebida pelo bot
-$update = $response["result"][$length-1];
+/*Com o webhook setado, não precisamos mais obter as mensagens através do método getUpdates.Em vez disso, 
+* como o este arquivo será chamado automaticamente quando o bot receber uma mensagem, utilizamos "php://input"
+* para obter o conteúdo da última mensagem enviada ao bot. 
+*/
+$update_response = file_get_contents("php://input");
+$update = json_decode($update_response, true);
 if (isset($update["message"])) {
   processMessage($update["message"]);
 }
+
 ?>
