@@ -44,6 +44,7 @@ function sendMessage($method, $parameters) {
 );
 
 $context  = stream_context_create( $options );
+
 file_get_contents(API_URL.$method, false, $context );
 }
 
@@ -51,8 +52,11 @@ file_get_contents(API_URL.$method, false, $context );
 * como o este arquivo será chamado automaticamente quando o bot receber uma mensagem, utilizamos "php://input"
 * para obter o conteúdo da última mensagem enviada ao bot. 
 */
+
 $update_response = file_get_contents("php://input");
+
 $update = json_decode($update_response, true);
+
 if (isset($update["message"])) {
   processMessage($update["message"]);
 }
