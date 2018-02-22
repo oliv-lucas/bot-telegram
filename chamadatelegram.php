@@ -1,6 +1,6 @@
 <?php
 require('chamadahtml.php');
-define('BOT_TOKEN', '344493477:AAHYFwXn0rdzPrAS-M0Tpm4AZOEKDnIPpn8');
+define('BOT_TOKEN', '524061362:AAHSFThuBOp1_yVVMsOdiTvKDT3Vh8LfFsY');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
 function processMessage($message) {
