@@ -1,6 +1,6 @@
 <?php
 
-require('chamarhtml.php');
+require('chamadahtml.php');
 define('BOT_TOKEN', '532165029:AAFeJuVv_Nzz2dy-r1s12aom3egfyqB1YSg');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
@@ -32,6 +32,7 @@ function processMessage($message) {
     sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => 'Desculpe, mas só compreendo mensagens em texto'));
   }
 }
+
 function sendMessage($method, $parameters) {
   $options = array(
   'http' => array(
@@ -41,9 +42,11 @@ function sendMessage($method, $parameters) {
                 "Accept: application/json\r\n"
     )
 );
+
 $context  = stream_context_create( $options );
 file_get_contents(API_URL.$method, false, $context );
 }
+
 //obtém as atualizações do bot
 $update_response = file_get_contents(API_URL."getupdates");
 $response = json_decode($update_response, true);
