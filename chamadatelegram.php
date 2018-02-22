@@ -1,5 +1,5 @@
 <?php
-require('consultahtml.php');
+require('chamadahtml.php');
 define('BOT_TOKEN', '344493477:AAHYFwXn0rdzPrAS-M0Tpm4AZOEKDnIPpn8');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
