@@ -15,13 +15,13 @@ function processMessage($message) {
 		//envia a mensagem ao usuário
       sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => 'Olá, '. $message['from']['first_name'].
 		'! Escolha a a escalada desejada por ambiente, 'reply_markup' => array(
-        'keyboard' => array(array('Produção', 'Pré-Produção'),array('Total','Lotofacil')),
+        'keyboard' => array(array('Mega Sena', 'Quina'),array('Lotomnia','Lotofacil')),
         'one_time_keyboard' => true)));
-    } else if ($text === "Produção") {
+    } else if ($text === "Mega Sena") {
       sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getResult('megasena', $text)));
-    } else if ($text === "Pré-Produção") {
+    } else if ($text === "Quina") {
       sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getResult('quina', $text)));
-    } else if ($text === "Total") {
+    } else if ($text === "Lotomania") {
       sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getResult('lotomania', $text)));
     } else if ($text === "Lotofacil") {
       sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getResult('lotofacil', $text)));
