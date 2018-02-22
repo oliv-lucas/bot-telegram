@@ -1,7 +1,7 @@
 <?php
 
 require('chamarhtml.php');
-define('BOT_TOKEN', 'SEU TOKEN');
+define('BOT_TOKEN', '532165029:AAFeJuVv_Nzz2dy-r1s12aom3egfyqB1YSg');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
 function processMessage($message) {
