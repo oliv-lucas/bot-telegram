@@ -15,6 +15,6 @@ $sendto =API_URL."sendmessage?chat_id=".$chatID."&text=".$reply;
 file_get_contents($sendto);
 
 function sendMessage(){
-$message = "I am a baby bot.";
+$message = "Eu sou o bot dos resultados.";
 return $message;
 }
